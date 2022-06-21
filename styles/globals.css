@@ -1,9 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
+
+@font-face {
+  font-family: 'neue_machinaregular';
+  src: url('../public/fonts/neuemachina-regular-webfont.woff2') format('woff2'),
+    url('../public/fonts/neuemachina-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'neue_machinaultrabold';
+  src: url('../public/fonts/neuemachina-ultrabold-webfont.woff2') format('woff2'),
+    url('../public/fonts/neuemachina-ultrabold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'neue_machinalight';
+  src: url('../public/fonts/neuemachina-light-webfont.woff2') format('woff2'),
+    url('../public/fonts/neuemachina-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 200;
+  box-sizing: border-box;
+  font-family: 'neue_machinalight';
+  /* font-family: 'Nuosu SIL', serif; */
+  font-size: 14px;
+}
+
+P {
+  line-height: 1.8;
+}
+
+.font-machina-bold {
+  font-family: 'neue_machinaultrabold';
+}
+
+.font-machina-light {
+  font-family: 'neue_machinalight';
 }
 
 a {
@@ -13,4 +60,447 @@ a {
 
 * {
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.sidebar {
+  height: calc(100vh - 70px);
+}
+
+.main {
+  height: calc(100vh - 100px);
+  width: 80vw;
+  left: 20vw;
+  top: 50px
+}
+
+.footer {
+  width: 80vw;
+  left: 20vw;
+  bottom: 0;
+}
+
+.nav-item {
+  transition: .3s ease-in;
+}
+
+.nav-item.is-active {
+  flex-grow: 1;
+}
+
+.nav-item.is-active .tab {
+  background-color: #1A1A1A;
+  color: #f1f1f1;
+}
+
+.tab {
+  width: 50px;
+  height: 100vh;
+  padding-top: 100px;
+  cursor: pointer;
+}
+
+.tab span {
+  display: flex;
+  align-items: baseline;
+  transform: rotate(-90deg);
+  font-size: 2rem;
+}
+
+
+
+
+
+.track {
+  will-change: transform;
+}
+
+.marquee--rtl {
+  animation: marquee-rtl 20s linear infinite;
+}
+
+.marquee--ltr {
+  animation: marquee-ltr 20s linear infinite;
+}
+
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.profile {
+  padding-bottom: 105px;
+}
+
+.services-title {
+  outline: none;
+}
+
+.services-title,
+.services-title * {
+  animation: cray 6s infinite steps(50);
+  display: inline-block;
+}
+
+@keyframes cray {
+  2% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  4% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  6% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  8% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  10% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  12% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  14% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  16% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  18% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+
+  20% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  22% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  24% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  26% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  28% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  30% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+
+  32% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  34% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  36% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  38% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  40% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  42% {
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  44% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  46% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  48% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  50% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  52% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: lowercase;
+  }
+
+  54% {
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  56% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  58% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  60% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  62% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  64% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  66% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  68% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  70% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  72% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  74% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  76% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  78% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  80% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  82% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  84% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  86% {
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  88% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+
+  90% {
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+
+  92% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  94% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  96% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  98% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
 }
