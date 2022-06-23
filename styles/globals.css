@@ -109,10 +109,6 @@ a {
   font-size: 2rem;
 }
 
-
-
-
-
 .track {
   will-change: transform;
 }
@@ -146,361 +142,45 @@ a {
   }
 }
 
+@keyframes marquee-ttb {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-30%);
+  }
+}
+
 .profile {
   padding-bottom: 105px;
 }
 
-.services-title {
-  outline: none;
+.showcase {
+  /* height: calc(100vh - 100px); */
+  transform: translate(-50%, -10%);
+  pointer-events: none;
 }
 
-.services-title,
-.services-title * {
-  animation: cray 6s infinite steps(50);
-  display: inline-block;
+.image-project-wrapper {
+  height: 400px;
+  width: 400px;
 }
 
-@keyframes cray {
-  2% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
+.previewProject {
+  animation: marquee-ttb 7s linear infinite;
+  animation-direction: alternate;
+}
 
-  4% {
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
-  6% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  8% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  10% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  12% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  14% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  16% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  18% {
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: underline;
-    text-transform: none;
-  }
-
-  20% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  22% {
-    font-weight: 300;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  24% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  26% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  28% {
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  30% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: underline;
-    text-transform: none;
-  }
-
-  32% {
-    font-weight: 100;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  34% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  36% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  38% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: capitalize;
-  }
-
-  40% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: capitalize;
-  }
-
-  42% {
-    font-weight: 700;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  44% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  46% {
-    font-weight: 300;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  48% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  50% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  52% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: lowercase;
-  }
-
-  54% {
-    font-weight: 600;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  56% {
-    font-weight: 200;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  58% {
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  60% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  62% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  64% {
-    font-weight: 300;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  66% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  68% {
-    font-weight: 200;
-    font-style: italic;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  70% {
-    font-weight: 200;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  72% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: capitalize;
-  }
-
-  74% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  76% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  78% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  80% {
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  82% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  84% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: capitalize;
-  }
-
-  86% {
-    font-weight: 600;
-    font-style: italic;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  88% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: line-through;
-    text-transform: none;
-  }
-
-  90% {
-    font-weight: 700;
-    font-style: italic;
-    text-decoration: underline;
-    text-transform: uppercase;
-  }
-
-  92% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  94% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  96% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  98% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
