@@ -196,22 +196,6 @@ export default function Home() {
 					property='og:image'
 					content='https://i.postimg.cc/tCfjCFW5/me.jpg'
 				/>
-				<script
-					async
-					src={`https://www.googletagmanager.com/gtag/js?id=G-YDT17PCFS3`}
-				/>
-				<script
-					dangerouslySetInnerHTML={{
-						__html: `
-							window.dataLayer = window.dataLayer || [];
-							function gtag(){dataLayer.push(arguments);}
-							gtag('js', new Date());
-							gtag('config', 'G-YDT17PCFS3', {
-							page_path: window.location.pathname,
-							});
-						`,
-					}}
-				/>
 			</Head>
 			<div className='relative'>
 				<div className='overflow-x-hidden flex flex-row w-full relative overflow-y-auto'>
