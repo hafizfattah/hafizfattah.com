@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import Image from "next/image";
 
 export default function Sidebar() {
 	return (
 		<aside className='fixed left-0 top-0 h-screen pt-[50px] border-hfg-black border-r w-[20vw] flex flex-col bg-hfg-white'>
 			<div className='image-wrapper overflow-hidden p-6'>
-				<Image src='/me.jpg' alt='me' width='1000' height='1000' />
+				<img src='/me.jpg' alt='me' width='1000' height='1000' />
 			</div>
 
 			<div className='profile px-6 uppercase'>
