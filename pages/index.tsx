@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import React from "react";
+import Head from "next/head";
 
 export default function Home() {
 	interface Project {
@@ -174,81 +175,124 @@ export default function Home() {
 	};
 
 	return (
-		<div className='relative'>
-			<div className='overflow-x-hidden flex flex-row w-full relative overflow-y-auto'>
-				<ul ref={el} className='list-none text-[3vw] leading-normal w-full	'>
-					{projects.map((portfolio: any, index) => (
-						<li
-							className='box border-b border-hfg-black relative px-6 overflow-hidden py-4 hover:bg-hfg-black hover:text-hfg-white'
-							key={index}
-							onMouseMove={(e) => {
-								onMouseMove(e);
-							}}
-							onMouseEnter={() => changeDetailProjectInfo(portfolio)}
-							onMouseLeave={onMouseOut}
-						>
-							<div
-								className={`block ${
-									portfolio.url === null
-										? "cursor-not-allowed"
-										: "cursor-pointer"
-								}`}
-								onClick={() => goToLink(portfolio.url)}
+		<div>
+			<Head>
+				<title>Hafiz fattah | Coder for hire</title>
+				<meta name='description' content='Code for Hire' />
+				<link rel='icon' href='/favicon.ico' />
+				<meta
+					name='keywords'
+					content='HTML, CSS, JavaScript, frontend, website, wordpress'
+				/>
+				<meta property='og:site_name' content='Hafiz fattah | Coder for hire' />
+				<meta property='og:url' content='https://hafizfattah.com' />
+				<meta property='og:type' content='website' />
+				<meta property='og:title' content='Hafiz fattah | Coder for hire' />
+				<meta
+					property='og:description'
+					content='Hafiz fattah | Coder for hire'
+				/>
+				<meta
+					property='og:image'
+					content='https://i.postimg.cc/tCfjCFW5/me.jpg'
+				/>
+				<script
+					async
+					src={`https://www.googletagmanager.com/gtag/js?id=G-YDT17PCFS3`}
+				/>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							window.dataLayer = window.dataLayer || [];
+							function gtag(){dataLayer.push(arguments);}
+							gtag('js', new Date());
+							gtag('config', 'G-YDT17PCFS3', {
+							page_path: window.location.pathname,
+							});
+						`,
+					}}
+				/>
+			</Head>
+			<div className='relative'>
+				<div className='overflow-x-hidden flex flex-row w-full relative overflow-y-auto'>
+					<ul ref={el} className='list-none text-[3vw] leading-normal w-full	'>
+						{projects.map((portfolio: any, index) => (
+							<li
+								className='box border-b border-hfg-black relative px-6 overflow-hidden py-4 hover:bg-hfg-black hover:text-hfg-white'
+								key={index}
+								onMouseMove={(e) => {
+									onMouseMove(e);
+								}}
+								onMouseEnter={() => changeDetailProjectInfo(portfolio)}
+								onMouseLeave={onMouseOut}
 							>
-								{portfolio.brand}
-							</div>
-						</li>
-					))}
-				</ul>
-			</div>
+								<div
+									className={`block ${
+										portfolio.url === null
+											? "cursor-not-allowed"
+											: "cursor-pointer"
+									}`}
+									onClick={() => goToLink(portfolio.url)}
+								>
+									{portfolio.brand}
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
 
-			<div className='showcase absolute bg-hfg-white border-r border-l border-hfg-black'>
-				<div className='flex flex-row justify-between p-2  text-hfg-white bg-hfg-black'>
-					<div className='flex flex-col'>
-						<span className='text-xs'>PROJECT</span>
-						<h3 className='font-machina-bold text-sm'>
-							{activeProject.project}
-						</h3>
+				<div className='showcase absolute bg-hfg-white border-r border-l border-hfg-black'>
+					<div className='flex flex-row justify-between p-2  text-hfg-white bg-hfg-black'>
+						<div className='flex flex-col'>
+							<span className='text-xs'>PROJECT</span>
+							<h3 className='font-machina-bold text-sm'>
+								{activeProject.project}
+							</h3>
+						</div>
+						<div className='flex flex-col text-right  '>
+							<span className='text-xs'>CLIENT</span>
+							<h3 className='font-machina-bold text-sm'>
+								{activeProject.client}
+							</h3>
+						</div>
 					</div>
-					<div className='flex flex-col text-right  '>
-						<span className='text-xs'>CLIENT</span>
-						<h3 className='font-machina-bold text-sm'>
-							{activeProject.client}
-						</h3>
+					<div className='image-project-wrapper overflow-hidden'>
+						<img
+							src={activeProject.image}
+							alt='Landscape picture'
+							className='previewProject w-full'
+						/>
+					</div>
+					<div className='flex flex-row justify-between border-t border-hfg-black border-b'>
+						<div className='w-[50%] p-2 border-r border-hfg-black'>
+							<span className='text-xs'>SCOPE</span>
+							<h3 className='font-machina-bold text-sm'>
+								{activeProject.scope}
+							</h3>
+						</div>
+						<div className='w-[50%] p-2 text-right'>
+							<span className='text-xs'>TECH</span>
+							<h3 className='font-machina-bold text-sm'>
+								{activeProject.tech}
+							</h3>
+						</div>
 					</div>
 				</div>
-				<div className='image-project-wrapper overflow-hidden'>
-					<img
-						src={activeProject.image}
-						alt='Landscape picture'
-						className='previewProject w-full'
-					/>
-				</div>
-				<div className='flex flex-row justify-between border-t border-hfg-black border-b'>
-					<div className='w-[50%] p-2 border-r border-hfg-black'>
-						<span className='text-xs'>SCOPE</span>
-						<h3 className='font-machina-bold text-sm'>{activeProject.scope}</h3>
-					</div>
-					<div className='w-[50%] p-2 text-right'>
-						<span className='text-xs'>TECH</span>
-						<h3 className='font-machina-bold text-sm'>{activeProject.tech}</h3>
-					</div>
-				</div>
-			</div>
 
-			<div className='py-[8vw]'>
-				<h3 className='text-[3vw] block text-center'>
-					Have a Project in mind?{" "}
-					<a
-						href='mailto:hafizxfattah@gmail.com'
-						className=' underline'
-						target='_blank'
-						onClick={() => goToLink("mailto:hafizxfattah@gmail.com")}
-						rel='noreferrer'
-					>
-						{`Let's talk`}
-					</a>
-				</h3>
+				<div className='py-[8vw]'>
+					<h3 className='text-[3vw] block text-center'>
+						Have a Project in mind?{" "}
+						<a
+							href='mailto:hafizxfattah@gmail.com'
+							className=' underline'
+							target='_blank'
+							onClick={() => goToLink("mailto:hafizxfattah@gmail.com")}
+							rel='noreferrer'
+						>
+							{`Let's talk`}
+						</a>
+					</h3>
+				</div>
 			</div>
 		</div>
 	);
