@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
 
 export default function DefaultLayout({children}: any) {
   const router = useRouter();
