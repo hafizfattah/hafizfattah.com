@@ -1,36 +1,31 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import {useRouter} from 'next/router';
 
-import Header from "components/header";
-import Sidebar from "components/sidebar";
-import Footer from "components/footer";
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
-export default function DefaultLayout({ children }: any) {
-	const router = useRouter();
-	return (
-		<div className='text-hfg-black bg-hfg-white'>
-			<Header />
-			<Sidebar />
-
-			<main className='main fixed bg-hfg-white'>
-				<nav className='absolute top-0 right-0 bottom-0 left-0 z-10 flex uppercase text-base'>
-					<Link href='/'>
-						<div
-							className={`nav-item flex border-hfg-black border-r ${
-								router.asPath === "/" ? "is-active" : ""
-							}`}
-						>
-							<div className='tab block hover:bg-hfg-black hover:text-hfg-white'>
-								<span>Work</span>
-							</div>
-							{router.asPath === "/" && (
-								<div className='content w-full overflow-y-auto hide-scrollbar'>
-									{children}
-								</div>
-							)}
-						</div>
-					</Link>
-					{/* <Link href='/resume'>
+export default function DefaultLayout({children}: any) {
+  const router = useRouter();
+  return (
+    <div className="text-hfg-black bg-hfg-white">
+      <Header />
+      <Sidebar />
+      <main className="main relative md:fixed bg-hfg-white md:h-[calc(100vh-100px)] w-full md:w-[80vw] left-0 md:left-[20vw] top-0 md:top-[50px]">
+        <nav className="relative md:absolute top-0 right-0 bottom-0 left-0 z-10 flex uppercase text-base overflow-hidden">
+          <Link href="/">
+            <div
+              className={`nav-item mt-4 md:mt-0 flex md:flex-row flex-col w-full md:border-hfg-black md:border-r  ${
+                router.asPath === '/' ? 'is-active' : ''
+              }`}
+            >
+              <div className="tab block hover:bg-hfg-black hover:text-hfg-white bg-hfg-black text-white p-4">
+                <span className="font-machina-bold text-3xl">Work</span>
+              </div>
+              {router.asPath === '/' && <div className="content w-full overflow-y-auto hide-scrollbar">{children}</div>}
+            </div>
+          </Link>
+          {/* <Link href='/resume'>
 						<div
 							className={`nav-item flex ${
 								router.asPath === "/resume" ? "is-active" : ""
@@ -44,9 +39,9 @@ export default function DefaultLayout({ children }: any) {
 							)}
 						</div>
 					</Link> */}
-				</nav>
-			</main>
-			<Footer />
-		</div>
-	);
+        </nav>
+      </main>
+      <Footer />
+    </div>
+  );
 }

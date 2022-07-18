@@ -1,49 +1,50 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-comment-textnodes */
+import MediaQuery from 'react-responsive';
 
 export default function Sidebar() {
-	return (
-		<aside className='fixed left-0 top-0 h-screen pt-[50px] border-hfg-black border-r w-[20vw] flex flex-col bg-hfg-white'>
-			<div className='image-wrapper overflow-hidden p-6'>
-				<img src='/me.jpg' alt='me' width='1000' height='1000' />
-			</div>
+  return (
+    <aside className="relative md:fixed left-0 top-0 h-auto md:h-screen pt-[50px] border-hfg-black border-r w-full md:w-[20vw] flex flex-col bg-hfg-white">
+      <div className="overflow-hidden md:p-6 flex items-center">
+        <img src="/me.jpg" alt="me" width="1000" height="1000" className="w-[170px] md:w-auto" />
+        <h1 className=" font-machina-bold text-4xl ml-4 md:hidden ">
+          HI,
+          <br />
+          I'M HAFIZ FATTAH
+        </h1>
+      </div>
 
-			<div className='profile px-6 uppercase'>
-				<h2 className='text-[1.25vw] font-machina-bold'>
-					{"I, I'M Hafiz Fattah"}
-				</h2>
-				<p className='mt-4 text-justify text-[1vw]'>
-					PASSIONATE ABOUT WEB TECHNOLOGIES. COMMITTED TO HELPING AMBITIOUS
-					COMPANIES AND BRANDS BY BUILDING UNIQUE, SCALABLE AND
-					PERFORMANCE-FRIENDLY WEBSITES; ALL WHILE DELIVERING A MEMORABLE WEB
-					EXPERIENCES.
-				</p>
-			</div>
-
-			<div className='absolute bottom-[50px] left-0 w-full '>
-				<div className='relative h-[2.5vw] w-full overflow-hidden flex items-center bg-hfg-black'>
-					<div className='track absolute marquee--ltr whitespace-nowrap'>
-						<div className='text-[1vw] text-hfg-white font-machina-bold uppercase'>
-							Javascript // Typescript // Vue // NUXT // VUEX // React // nextjs
-							// REDUX // HTML // SCSS // Tailwind // Node js // Express //
-							Javascript // Typescript // Vue // NUXT // VUEX // React // nextjs
-							// REDUX // HTML // SCSS // Tailwind // Node js // Express //
-						</div>
-					</div>
-				</div>
-				<div className='relative h-[2.5vw] w-full overflow-hidden flex items-center bg-hfg-black mt-1'>
-					<div className='track absolute marquee--rtl whitespace-nowrap'>
-						<div className='text-[1vw] text-hfg-white font-machina-bold uppercase'>
-							MongoDB // MySQL // JEST // Git // CI/CD // NGINX // DOCKER //
-							Webpack // Gulp // WORDPRESS // Webflow // User Experience //
-							MongoDB // MySQL // JEST // Git // CI/CD // NGINX // DOCKER //
-							Webpack // Gulp // WORDPRESS // Webflow // User Experience //
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className='absolute bottom-0 left-0 w-full border-hfg-black border-t h-[50px] flex justify-end items-center px-4'>
-				<p>© 2022 HAFIZFATTAH.COM</p>
-			</div>
-		</aside>
-	);
+      <div className="pb-0 md:pb-[105px] px-4 pt-2 md:px-6 uppercase">
+        <h2 className="text-[1.25vw] font-machina-bold md:block hidden">{"HI, I'M HAFIZ FATTAH"}</h2>
+        <p className="mt-4 text-justify md:text-[1vw] ">
+          PASSIONATE ABOUT WEB TECHNOLOGIES. COMMITTED TO HELPING AMBITIOUS COMPANIES AND BRANDS BY BUILDING UNIQUE, SCALABLE AND
+          PERFORMANCE-FRIENDLY WEBSITES; ALL WHILE DELIVERING A MEMORABLE WEB EXPERIENCES.
+        </p>
+      </div>
+      <MediaQuery minWidth={768}>
+        <div className="relative bottom-[50px] left-0 w-full md:block hidden">
+          <div className="relative h-[2.5vw] w-full overflow-hidden flex items-center bg-hfg-black">
+            <div className="track absolute marquee--ltr whitespace-nowrap">
+              <div className="text-[1vw] text-hfg-white font-machina-bold uppercase">
+                Javascript // Typescript // Vue // NUXT // VUEX // React // nextjs // REDUX // HTML // SCSS // Tailwind // Node js //
+                Express // Javascript // Typescript // Vue // NUXT // VUEX // React // nextjs // REDUX // HTML // SCSS // Tailwind // Node
+                js // Express //
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[2.5vw] w-full overflow-hidden flex items-center bg-hfg-black mt-1">
+            <div className="track absolute marquee--rtl whitespace-nowrap">
+              <div className="text-[1vw] text-hfg-white font-machina-bold uppercase">
+                MongoDB // MySQL // JEST // Git // CI/CD // NGINX // DOCKER // Webpack // Gulp // WORDPRESS // Webflow // User Experience //
+                MongoDB // MySQL // JEST // Git // CI/CD // NGINX // DOCKER // Webpack // Gulp // WORDPRESS // Webflow // User Experience //
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full border-hfg-black border-t h-[50px] hidden md:flex justify-end items-center px-4">
+          <p>© 2022 HAFIZFATTAH.COM</p>
+        </div>
+      </MediaQuery>
+    </aside>
+  );
 }
