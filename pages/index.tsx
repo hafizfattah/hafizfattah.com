@@ -209,7 +209,7 @@ export default function Home() {
                   </div>
                 </MediaQuery>
 
-                <MediaQuery maxWidth={768}>
+                <MediaQuery maxWidth={600}>
                   <div className="showcase bg-hfg-white border-r border-l border-hfg-black">
                     <div className="flex flex-row justify-between p-2  text-hfg-white bg-hfg-black">
                       <div className="flex flex-col">
@@ -235,14 +235,14 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <a
-                      className={`block ${portfolio.url === null ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                      onClick={() => goToLink(portfolio.url)}
-                    >
-                      VIEW SITE
-                    </a>
-                  </div>
+                  <a
+                    href={portfolio.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block p-4 bg-hfg-black font-machina-bold text-hfg-white text-center"
+                  >
+                    VIEW SITE
+                  </a>
                 </MediaQuery>
               </li>
             ))}
